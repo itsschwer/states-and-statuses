@@ -14,4 +14,6 @@ public class Actor : MonoBehaviour, IGigantism {
             _gigantism = GetComponentInChildren<Gigantism>();
         }
     }
+
+    private void Awake() => gigantism.Initialise(this);
 }
