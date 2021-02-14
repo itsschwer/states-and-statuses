@@ -13,6 +13,6 @@ Statuses:
 - Dashless
     - Temporarily disables character's dash option.
 - Slow
-    - Reduces the character's speed and dash distance.
+    - Reduces the character's speed and dash distance, max 8 stacks (default).
 
 <sup>^</sup> *Might be cleaned up in the future, but I'm currently using this to teach someone.*
