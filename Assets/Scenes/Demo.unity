@@ -404,8 +404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc958b008636d94ca8c316022d77870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  maxDashDistance: 5
+  moveSpeed: 6
+  maxDashDistance: 4
   _gigantism: {fileID: 1600725314}
 --- !u!212 &1307294098
 SpriteRenderer:

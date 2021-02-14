@@ -2,8 +2,8 @@
 
 public class Character : Actor, IGigantism {
     [Header("Properties")]
-    [SerializeField] protected float moveSpeed = 10;
-    [SerializeField] protected float maxDashDistance = 5;
+    [SerializeField] protected float moveSpeed = 6;
+    [SerializeField] protected float maxDashDistance = 4;
 
     [Header("Inflictable Statuses")]
     [SerializeField] private Gigantism _gigantism = default;
