@@ -2,6 +2,7 @@
 
 public class Dashless : Status {
     [SerializeField] private float duration = 4;
+    [SerializeField] private ParticleSystem particles = default;
 
     private float timer;
 
@@ -14,7 +15,11 @@ public class Dashless : Status {
 
         target.canDash = false;
         timer = duration;
-        this.gameObject.SetActive(true);
+
+        var e = particles.emission;
+        e.enabled = true;
+
+        this.enabled = true;
     }
 
     public override void Clear() => Clear(false);
@@ -26,7 +31,10 @@ public class Dashless : Status {
             timer = 0;
         }
 
-        this.gameObject.SetActive(false);
+        var e = particles.emission;
+        e.enabled = false;
+
+        this.enabled = false;
     }
 
     protected override void Update() {

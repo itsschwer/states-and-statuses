@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 4
+  particles: {fileID: 445508622}
 --- !u!199 &445508621
 ParticleSystemRenderer:
   serializedVersion: 6
