@@ -5,6 +5,9 @@ public class Gigantism : Status {
     [SerializeField] private float duration = 2;
     [SerializeField] private int maxStacks = 3;
 
+    /// <summary>
+    /// This value should be cached where possible (uses a for loop).
+    /// </summary>
     public int stacks {
         get {
             int s = 0;
@@ -68,6 +71,10 @@ public class Gigantism : Status {
 
                 if (timers[i] < 0) {
                     target.transform.localScale /= scaleMultiplier;
+                }
+
+                if (stacks <= 0) {
+                    this.enabled = false;
                 }
             }
         }
