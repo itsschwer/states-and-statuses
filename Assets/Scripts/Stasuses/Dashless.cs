@@ -14,7 +14,7 @@ public class Dashless : Status {
 
         target.canDash = false;
         timer = duration;
-        this.enabled = true;
+        this.gameObject.SetActive(true);
     }
 
     public override void Clear() => Clear(false);
@@ -26,7 +26,7 @@ public class Dashless : Status {
             timer = 0;
         }
 
-        this.enabled = false;
+        this.gameObject.SetActive(false);
     }
 
     protected override void Update() {
