@@ -1,6 +1,8 @@
 # states-and-statuses
 A (very rough)<sup>^</sup> prototype for a compositional states and statuses system in Unity.
 
+***Only statuses have been implemented so far!***
+
 This repository is intended to be used by developers as a reference for a potential implementatoin of finite state machines and status effects.
 
 Build controls:
