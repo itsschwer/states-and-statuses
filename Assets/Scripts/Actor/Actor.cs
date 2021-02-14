@@ -1,19 +1,12 @@
 ﻿using UnityEngine;
 
-public class Actor : MonoBehaviour, IGigantism {
-    [SerializeField, HideInInspector] private Transform _transform = default;
-    public new Transform transform => _transform;
+[RequireComponent(typeof(Rigidbody2D))]
+public class Actor : MonoBehaviour {
+    public new Transform transform { get; private set; }
+    protected new Rigidbody2D rigidbody;
 
-    [SerializeField] private Gigantism _gigantism = default;
-    public Gigantism gigantism => _gigantism;
-
-    private void OnValidate() {
-        _transform = GetComponent<Transform>();
-
-        if (_gigantism == null) {
-            _gigantism = GetComponentInChildren<Gigantism>();
-        }
+    protected virtual void Awake() {
+        transform = GetComponent<Transform>();
+        rigidbody = GetComponent<Rigidbody2D>();
     }
-
-    private void Awake() => gigantism.Initialise(this);
 }
