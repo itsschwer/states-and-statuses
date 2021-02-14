@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 
-public abstract class Character : Actor, IGigantism, IDashless {
+public abstract class Character : Actor, IGigantism, IDashless, ISlow {
+    [Header("Components")]
+    [SerializeField] protected SpriteRenderer _renderer = default;
+    public new SpriteRenderer renderer => _renderer;
+
     [Header("Properties")]
     [SerializeField] protected float moveSpeed = 6;
     [SerializeField] protected float maxDashDistance = 4;
@@ -10,6 +14,8 @@ public abstract class Character : Actor, IGigantism, IDashless {
     public Gigantism gigantism => _gigantism;
     [SerializeField] private Dashless _dashless = default;
     public Dashless dashless => _dashless;
+    [SerializeField] private Slow _slow = default;
+    public Slow slow => _slow;
 
     public float speedModifier { get; set; } = 1;
     public bool canDash { get; set; } = true;
@@ -21,12 +27,14 @@ public abstract class Character : Actor, IGigantism, IDashless {
         if (overrideExisting || _renderer == null) _renderer = GetComponentInChildren<SpriteRenderer>();
         if (overrideExisting || _gigantism == null) _gigantism = GetComponentInChildren<Gigantism>();
         if (overrideExisting || _dashless == null) _dashless = GetComponentInChildren<Dashless>();
+        if (overrideExisting || _slow == null) _slow = GetComponentInChildren<Slow>();
     }
 
     protected override void Awake() {
         base.Awake();
         gigantism?.Initialise(this);
         dashless?.Initialise(this);
+        slow?.Initialise(this);
     }
 
     protected void MoveTowards(Vector2 destination, float maxDelta) {
