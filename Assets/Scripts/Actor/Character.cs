@@ -12,6 +12,7 @@ public class Character : Actor, IGigantism {
     public float speedModifier { get; set; } = 1;
     public bool canDash { get; set; } = true;
 
+    private void Reset() => OnValidate();
     private void OnValidate() {
         if (_gigantism == null) {
             _gigantism = GetComponentInChildren<Gigantism>();

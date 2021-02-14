@@ -382,7 +382,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1307294100}
   - component: {fileID: 1307294097}
-  - component: {fileID: 1307294099}
   - component: {fileID: 1307294103}
   - component: {fileID: 1307294102}
   - component: {fileID: 1307294098}
@@ -405,8 +404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc958b008636d94ca8c316022d77870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  maxDashDistance: 3
+  moveSpeed: 10
+  maxDashDistance: 5
+  _gigantism: {fileID: 1600725314}
 --- !u!212 &1307294098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -457,19 +457,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1307294099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307294096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e1120eb90460ae40b72c9b0336395a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gigantism: {fileID: 1600725314}
 --- !u!4 &1307294100
 Transform:
   m_ObjectHideFlags: 0
