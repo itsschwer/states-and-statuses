@@ -30,7 +30,12 @@ public class Gigantism : Status {
         if (target == null) return;
 
         if (stacks < maxStacks) {
-            timers[stacks] = duration;
+            for (int i = 0; i < timers.Length; i++) {
+                if (timers[i] <= 0) {
+                    timers[i] = duration;
+                    break;
+                }
+            }
 
             target.transform.localScale *= scaleMultiplier;
         }
