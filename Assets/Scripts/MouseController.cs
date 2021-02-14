@@ -15,24 +15,18 @@ public class MouseController : MonoBehaviour {
 
     private void Update() {
         if (Input.GetMouseButtonDown(1)) {
-            Dash();
+            MoveTowards(maxDashDistance);
         }
         else if (Input.GetMouseButton(0)) {
-            Walk();
+            MoveTowards(moveSpeed * Time.deltaTime);
         }
     }
 
-    private void Walk() {
+    private void MoveTowards(float maxDelta) {
         var difference = mousePosition - (Vector2)transform.position;
-        difference.Normalize();
-        transform.Translate(difference * moveSpeed * Time.deltaTime);
-    }
-
-    private void Dash() {
-        var difference = mousePosition - (Vector2)transform.position;
-        if (difference.magnitude > maxDashDistance) {
+        if (difference.magnitude > maxDelta) {
             difference.Normalize();
-            transform.Translate(difference * maxDashDistance);
+            transform.Translate(difference * maxDelta);
         }
         else {
             transform.Translate(difference);
